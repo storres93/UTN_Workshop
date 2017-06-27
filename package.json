@@ -9,7 +9,7 @@
   ],
   "license": "UNLICENSED",
   "scripts": {
-    "build": "npm run clean && webpack src/index.js dist/bundle.js",
+    "build": "npm run clean && webpack",
     "clean": "rm -rf dist"
   },
   "repository": {
@@ -17,6 +17,9 @@
     "url": "git@github.com:storres93/UTN_Workshop.git"
   },
   "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.0",
+    "babel-preset-env": "^1.5.2",
     "webpack": "^3.0.0"
   },
   "dependencies": {
