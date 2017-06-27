@@ -8,11 +8,16 @@
     "Pablo Carriqueo"
   ],
   "license": "UNLICENSED",
-  "scripts": {},
+  "scripts": {
+		"build": "npm run clean && webpack src/index.js dist/bundle.js",
+		"clean": "rm -rf dist"
+	},
   "repository": {
     "type": "git",
     "url": "git@github.com:storres93/UTN_Workshop.git"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "webpack": "^3.0.0"
+  },
   "dependencies": {}
 }
