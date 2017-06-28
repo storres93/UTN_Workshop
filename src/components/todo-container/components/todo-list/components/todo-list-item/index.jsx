@@ -4,18 +4,19 @@ import React, {
 
 export default class TodoListItem extends Component {
 	static defaultProps = {
-		todo: ''
+		todo: '',
+		checked: false
 	};
 
 	constructor(props) {
 		super(props);
 
-		this.todo = this.props.todo;
+		this.toggleCheck = this.toggleCheck.bind(this);
 	}
 
 	render() {
 		return <div>
-			<input type="checkbox" /> <span> { this.todo } </span>
+			<input type="checkbox" onChange={ this.toggleCheck }/><span> { this.props.todo } </span>
 		</div>
 	}
 }

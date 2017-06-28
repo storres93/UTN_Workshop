@@ -4,31 +4,36 @@ import React, {
 
 export default class TodoCreator extends Component {
 	static defaultProps = {
-		todo: ''
+		todo: '',
+		createTodo: null,
 	};
 
 	constructor(props) {
 		super(props);
 
-		this.createTodo = props.createTodo;
+		this.state = {
+			...this.props
+		};
 		this.handleInputChange = this.handleInputChange.bind(this);
 		this.handleClick = this.handleClick.bind(this);
 	}
 
 	handleInputChange(event) {
-		this.todo = event.target.value;
-		this.forceUpdate();
+		this.setState({
+			todo: event.target.value
+		});
 	}
 
 	handleClick() {
-		this.createTodo(this.todo);
-		this.todo = '';
-		this.forceUpdate();
+		this.state.createTodo(this.state.todo);
+		this.setState({
+			todo: ''
+		});
 	}
 
 	render() {
 		return <div>
-			<input type="text" value={ this.todo } placeholder="To do" onChange={this.handleInputChange} />
+			<input type="text" value={ this.state.todo } placeholder="To do" onChange={this.handleInputChange} />
 			<button onClick={this.handleClick}>Agregar To Do</button>
 		</div>;
 	}

@@ -14,18 +14,25 @@ export default class TodoContainer extends Component {
 		super(props);
 
 		this.createTodo = this.createTodo.bind(this);
-		this.todos = this.props.todos;
+		this.state = {
+			...this.props
+		};
 	}
 
 	createTodo(newTodo) {
-		this.todos.push(newTodo);
+		const newTodos = this.state.todos;
+		newTodos.push(newTodo);
+
+		this.setState({
+			todos: newTodos,
+		});
 		this.forceUpdate();
 	}
 
 	render() {
 		return <div>
 			<div>
-				<TodoList todos={ this.todos } />
+				<TodoList todos={ this.state.todos } />
 			</div>
 			<div>
 				<TodoCreator createTodo={ this.createTodo } />
