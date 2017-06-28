@@ -4,8 +4,8 @@ import {
 
 import React from "react";
 
-import TodoCreator from "./components/todo-creator";
+import TodoContainer from "./components/todo-container";
 
 const containerEl = document.getElementById("react-app");
 
-render(<TodoCreator />, containerEl);
+render(<TodoContainer />, containerEl);
