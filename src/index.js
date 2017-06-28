@@ -1,6 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import {
+	render,
+} from "react-dom";
 
-import HelloWorld from './hello-world';
+import React from "react";
 
-ReactDOM.render(React.createElement(HelloWorld), document.getElementById('react-app'));
+import HelloWorld from "./components/hello-world";
+
+const containerEl = document.getElementById("react-app");
+
+render(React.createElement(HelloWorld), containerEl);
