@@ -10,13 +10,11 @@ export default class TodoListItem extends Component {
 
 	constructor(props) {
 		super(props);
-
-		this.toggleCheck = this.toggleCheck.bind(this);
 	}
 
 	render() {
 		return <div>
-			<input type="checkbox" onChange={ this.toggleCheck }/><span> { this.props.todo } </span>
+			<input type="checkbox"/><span> { this.props.todo } </span>
 		</div>
 	}
 }
