@@ -1,0 +1,77 @@
+//Button
+$button-min-width: 68px !default;
+$button-height: 40px !default;
+$button-font-size: 13px !default;
+$button-font-color: #FFFFFF !default;
+$button-background-color: #0074CC !default;
+$button-border-radius: 3px;
+$button-padding: 0 20px;
+$button-margin: 6px 4px 4px;
+
+// Hover
+$button-hover-background-color: #0C5A99;
+
+// Input
+$input-background-color: #FFFFFF;
+$input-boder: 1px solid transparent;
+$input-border-color: #7FB9E5;
+$input-focus-border-color: #164570;
+$input-border-radius: 2px;
+$input-height: 36px;
+$input-padding: 6px 4px 4px;
+$input-width: 100%;
+
+.todo-creator__container{
+	margin-top: 30px;
+
+	.todo-creator__button {
+		max-width: inherit;
+		min-width: $button-min-width;
+		height: $button-height;
+		font-size: $button-font-size;
+		vertical-align: top;
+		appearance: none;
+		border: none;
+		padding: $button-padding;
+		background: none;
+		color: $button-font-color;
+		background-color: $button-background-color;
+		margin: $button-margin;
+		float: right;
+
+		border-radius: $button-border-radius;
+
+		cursor: pointer;
+
+		&:hover {
+			background-color: $button-hover-background-color;
+		}
+
+		&:active,
+		&:focus {
+			outline: none;
+		}
+	}
+
+	.todo-creator__input {
+		background-color: $input-background-color;
+		border: $input-boder;
+		border-top-left-radius: $input-border-radius;
+		border-top-right-radius: $input-border-radius;
+		outline: none;
+		height: $input-height;
+		padding: $input-padding;
+		width: $input-width;
+
+		border-bottom-color: $input-border-color;
+
+		&:hover {
+			border-color: $input-border-color;
+		}
+
+		&:focus {
+			border-color: transparent;
+			border-bottom-color: $input-focus-border-color;
+		}
+	}
+}

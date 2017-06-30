@@ -5,6 +5,7 @@ import React, {
 import TodoList from './components/todo-list';
 import TodoCreator from './components/todo-creator';
 
+import './main.scss';
 export default class TodoContainer extends Component {
 	static defaultProps = {
 		todos: []
@@ -20,6 +21,9 @@ export default class TodoContainer extends Component {
 	}
 
 	createTodo(newTodo) {
+		if(newTodo === null || newTodo === '') {
+			return true;
+		}
 		const newTodos = this.state.todos;
 		newTodos.push(newTodo);
 
@@ -30,7 +34,7 @@ export default class TodoContainer extends Component {
 	}
 
 	render() {
-		return <div>
+		return <div className="todo-container">
 			<div>
 				<TodoList todos={ this.state.todos } />
 			</div>

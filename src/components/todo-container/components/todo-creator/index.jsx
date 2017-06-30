@@ -2,6 +2,8 @@ import React, {
 	Component
 } from 'react';
 
+import './main.scss';
+
 export default class TodoCreator extends Component {
 	static defaultProps = {
 		todo: '',
@@ -32,9 +34,9 @@ export default class TodoCreator extends Component {
 	}
 
 	render() {
-		return <div>
-			<input type="text" value={ this.state.todo } placeholder="To do" onChange={this.handleInputChange} />
-			<button onClick={this.handleClick}>Agregar To Do</button>
+		return <div className='todo-creator__container'>
+			<input type='text' className='todo-creator__input' value={ this.state.todo } placeholder='To do' onChange={this.handleInputChange} />
+			<button className='todo-creator__button' onClick={this.handleClick}>Agregar To Do</button>
 		</div>;
 	}
 }

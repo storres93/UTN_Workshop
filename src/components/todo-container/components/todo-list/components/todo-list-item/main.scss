@@ -1,0 +1,9 @@
+.todo-item__container {
+	.todo-item__label {
+		font-size: 14px;
+
+		&--checked {
+			text-decoration: line-through;
+		}
+	}
+}

@@ -1,0 +1,26 @@
+// Header
+$header-font-size: 16px;
+$header-color: #6AB2E6;
+
+// List
+$list-margin-top: 10px;
+$list-min-height: 100px;
+$list-border-radius: 3px;
+$list-border-color: #6AB2E6;
+$list-padding: 40px 50px;
+
+.todo-list__container {
+	.todo-list__header {
+		color: $header-color;
+		font-size: $header-font-size;
+		text-align: center;
+	}
+
+	.todo-list__list {
+		margin-top: $list-margin-top;
+		min-height: $list-min-height;
+		border: 1px solid $list-border-color;
+		padding: $list-padding;
+		border-radius: $list-border-radius;
+	}
+}
