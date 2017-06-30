@@ -30,7 +30,6 @@ export default class TodoContainer extends Component {
 		this.setState({
 			todos: newTodos,
 		});
-		this.forceUpdate();
 	}
 
 	render() {
