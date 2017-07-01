@@ -3,9 +3,17 @@ import {
 } from 'react-dom';
 
 import React from 'react';
-
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 import TodoContainer from './components/todo-container';
 
-const containerEl = document.getElementById('react-app');
+const store = createStore(
+	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
-render(<TodoContainer />, containerEl);
+render(
+	<Provider store={store}>
+		<TodoContainer />
+	</Provider>,
+	document.getElementById('react-app')
+);

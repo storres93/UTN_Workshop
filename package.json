@@ -48,6 +48,7 @@
     "prop-types": "^15.5.10",
     "react-addons-test-utils": "^15.6.0",
     "react-test-renderer": "^15.6.1",
+    "redux-devtools": "^3.4.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "webpack": "^2.0.0",
@@ -55,7 +56,10 @@
   },
   "dependencies": {
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.5",
+    "redux": "^3.7.1",
+    "redux-action-reducer-mapper": "^1.0.2"
   },
   "pre-commit": [
     "lint"
