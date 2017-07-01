@@ -4,8 +4,14 @@ import React, {
 
 import TodoListItem from './components/todo-list-item';
 
-import './main.scss'
+import PropTypes from 'prop-types';
+
+import './main.scss';
 export default class TodoList extends Component {
+	static propTypes = {
+		todos: PropTypes.array,
+	};
+
 	static defaultProps = {
 		todos: []
 	}
@@ -17,8 +23,8 @@ export default class TodoList extends Component {
 	}
 
 	render() {
-		var todoItems = this.todos.map((todo) => (
-			<TodoListItem todo={ todo } />
+		var todoItems = this.todos.map((todo, key) => (
+			<TodoListItem key={ key } todo={ todo } />
 		));
 
 		return <div className='todo-list__container'>
@@ -28,6 +34,6 @@ export default class TodoList extends Component {
 			<div className='todo-list__list'>
 				{ todoItems }
 			</div>
-		</div>
+		</div>;
 	}
 }

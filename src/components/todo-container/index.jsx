@@ -5,8 +5,14 @@ import React, {
 import TodoList from './components/todo-list';
 import TodoCreator from './components/todo-creator';
 
+import PropTypes from 'prop-types';
+
 import './main.scss';
 export default class TodoContainer extends Component {
+	static propTypes = {
+		todos: PropTypes.array,
+	};
+
 	static defaultProps = {
 		todos: []
 	}
@@ -21,7 +27,7 @@ export default class TodoContainer extends Component {
 	}
 
 	createTodo(newTodo) {
-		if(newTodo === null || newTodo === '') {
+		if (newTodo === null || newTodo === '') {
 			return true;
 		}
 		const newTodos = this.state.todos;
@@ -41,6 +47,6 @@ export default class TodoContainer extends Component {
 			<div>
 				<TodoCreator createTodo={ this.createTodo } />
 			</div>
-		</div>
+		</div>;
 	}
 }

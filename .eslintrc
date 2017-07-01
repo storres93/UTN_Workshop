@@ -1,0 +1,61 @@
+---
+parser: 'babel-eslint'
+extends: ['eslint:recommended','plugin:react/recommended']
+env:
+  node: true
+  es6: true
+  mocha: true
+  browser: true
+parserOptions:
+  sourceType: 'module'
+rules:
+  newline-per-chained-call: 0
+  object-shorthand: 0
+  symbol-description: 0
+  arrow-body-style: ['error', 'as-needed']
+  brace-style: ['error', '1tbs', {allowSingleLine: true}]
+  curly: ['error', 'all']
+  padded-blocks: ['error', 'never']
+  eol-last: 'error'
+  eqeqeq: 'error'
+  guard-for-in: 'error'
+  indent: ['error', 'tab', {SwitchCase: 1}]
+  key-spacing: ['error', {beforeColon: false, afterColon: true}]
+  keyword-spacing: ['error', {after: true}]
+  newline-before-return: 'error'
+  no-bitwise: 'error'
+  no-caller: 'error'
+  no-confusing-arrow: ['error', {allowParens: true}]
+  no-console: 'warn'
+  no-duplicate-imports: 'error'
+  no-empty: 'error'
+  no-implicit-coercion: ['error', {allow: ['!!']}]
+  no-mixed-spaces-and-tabs: ['error', 'smart-tabs']
+  no-multiple-empty-lines: ['error', {max: 1}]
+  no-shadow: 'off'
+  no-spaced-func: 'error'
+  no-trailing-spaces: 'error'
+  no-undef: 'error'
+  no-underscore-dangle: 'off'
+  no-unexpected-multiline: 'error'
+  no-unused-vars: 'error'
+  no-use-before-define: 'off'
+  no-useless-computed-key: 'error'
+  no-useless-constructor: 'error'
+  no-useless-rename: 'error'
+  no-with: 'error'
+  object-curly-spacing: ['error', 'always']
+  prefer-const: 'error'
+  prefer-rest-params: 'error'
+  prefer-spread: 'error'
+  prefer-template: 'error'
+  quotes: ['error', 'single']
+  rest-spread-spacing: 'error'
+  semi: ['error', 'always']
+  space-before-blocks: ['error', 'always']
+  space-before-function-paren: ['error', 'never']
+  space-in-parens: ['error', 'never']
+  space-infix-ops: 'error'
+  space-unary-ops: ['error', {words: false, nonwords: false}]
+  strict: 'off'
+  template-curly-spacing: 'error'

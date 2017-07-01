@@ -2,9 +2,16 @@ import React, {
 	Component
 } from 'react';
 
+import PropTypes from 'prop-types';
+
 import './main.scss';
 
 export default class TodoCreator extends Component {
+	static propTypes = {
+		todo: PropTypes.string,
+		createTodo: PropTypes.func,
+	};
+
 	static defaultProps = {
 		todo: '',
 		createTodo: null,

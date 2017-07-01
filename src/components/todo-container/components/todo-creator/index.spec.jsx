@@ -1,6 +1,6 @@
 import React from 'react';
-import {expect} from 'chai';
-import { mount, shallow} from 'enzyme';
+import { expect } from 'chai';
+import { shallow } from 'enzyme';
 import sinon from 'sinon';
 
 import TodoCreator from './index.jsx';
