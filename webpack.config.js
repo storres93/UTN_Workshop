@@ -19,6 +19,11 @@ module.exports = {
 		hot: true,
 		contentBase: './public/'
 	},
+	externals: {
+		'react/addons': true,
+		'react/lib/ExecutionEnvironment': true,
+		'react/lib/ReactContext': true,
+	},
 	module: {
 		loaders: [{
 			test: /\.jsx?$/,
