@@ -1,6 +1,6 @@
 import mapActionToReducer from 'redux-action-reducer-mapper';
 
-import { ADD_TODO } from '../actions';
+import { ADD_TODO, TOGGLE_TODO } from '../actions';
 
 export default mapActionToReducer({
 	'default': [],
@@ -13,4 +13,12 @@ export default mapActionToReducer({
 			checked: false,
 		}
 	]),
+
+	[TOGGLE_TODO]: (state, action) => {
+		return state.map(todo =>
+			(todo.id === action.payload.id)
+				? { ...todo, checked: !todo.checked }
+				: todo
+		)
+	}
 });

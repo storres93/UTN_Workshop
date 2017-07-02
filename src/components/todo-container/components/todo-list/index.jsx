@@ -6,19 +6,27 @@ import TodoListItem from './components/todo-list-item';
 
 import PropTypes from 'prop-types';
 
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import { fireToggleTodo } from '../../../../actions';
+
 import './main.scss';
-export default class TodoList extends Component {
+export class TodoList extends Component {
 	static propTypes = {
 		todos: PropTypes.array,
+		toggleTodo: PropTypes.func,
 	};
 
 	static defaultProps = {
-		todos: []
+		todos: [],
+		toggleTodo: null,
 	}
 
 	render() {
-		var todoItems = this.props.todos.map((todo, key) => (
-			<TodoListItem key={ key } todo={ todo } />
+		const toggleWrapper = (id) => (() => this.props.toggleTodo(id));
+		const todoItems = this.props.todos.map((todo, key) => (
+			<TodoListItem key={ key } todo={ todo } toggleCheck={toggleWrapper(todo.id)} />
 		));
 
 		return <div className='todo-list__container'>
@@ -31,3 +39,20 @@ export default class TodoList extends Component {
 		</div>;
 	}
 }
+
+function mapStateToProps(state) {
+	return {
+		todos: state.todos
+	};
+}
+
+function mapDispatchToProps(dispatch) {
+	return {
+		toggleTodo: bindActionCreators(fireToggleTodo, dispatch),
+	};
+}
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps,
+)(TodoList);
