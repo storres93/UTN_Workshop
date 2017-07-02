@@ -9,24 +9,26 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { fireToggleTodo } from '../../../../actions';
+import { fireToggleTodo, fireReorderTodo } from '../../../../actions';
 
 import './main.scss';
 export class TodoList extends Component {
 	static propTypes = {
 		todos: PropTypes.array,
 		toggleTodo: PropTypes.func,
+		reorderTodo: PropTypes.func,
 	};
 
 	static defaultProps = {
 		todos: [],
 		toggleTodo: null,
+		reorderTodo: null,
 	}
 
 	render() {
 		const toggleWrapper = (id) => (() => this.props.toggleTodo(id));
 		const todoItems = this.props.todos.map((todo, key) => (
-			<TodoListItem key={ key } todo={ todo } toggleCheck={toggleWrapper(todo.id)} />
+			<TodoListItem key={ key } todo={ todo } toggleCheck={ toggleWrapper(todo.id) } reorderTodo={ this.props.reorderTodo }/>
 		));
 
 		return <div className='todo-list__container'>
@@ -49,6 +51,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
 	return {
 		toggleTodo: bindActionCreators(fireToggleTodo, dispatch),
+		reorderTodo: bindActionCreators(fireReorderTodo, dispatch),
 	};
 }
 
