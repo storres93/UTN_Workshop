@@ -2,7 +2,7 @@ import mapActionToReducer from 'redux-action-reducer-mapper';
 
 import { findIndex } from 'lodash';
 
-import { ADD_TODO, TOGGLE_TODO, RESET_TODOS, REORDER_TODO } from '../actions';
+import { ADD_TODO, TOGGLE_TODO, RESET_TODOS, REORDER_TODO, GET_TODOS_RESPONSE } from '../actions';
 
 export default mapActionToReducer({
 	'default': [],
@@ -37,5 +37,9 @@ export default mapActionToReducer({
 		}
 
 		return state.map((todo) => (todo));
-	}
+	},
+
+	[GET_TODOS_RESPONSE]: (state, action) => ([
+		...action.payload.todos
+	]),
 });
