@@ -99,7 +99,11 @@ export default class ApiClient {
 			request.type('application/json');
 		}
 
-		request.send(bodyParam);
+		if (contentType === 'application/x-www-form-urlencoded') {
+			request.send(this.normalizeParams(formParams));
+		} else {
+			request.send(bodyParam);
+		}
 
 		const accept = this.jsonPreferredMime(accepts);
 		if (accept) {
