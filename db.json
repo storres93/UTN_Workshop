@@ -1,0 +1,15 @@
+{
+	"todos": [{
+		"id": 1,
+		"text": "Primer Todo",
+		"checked": true
+	}, {
+		"id": 2,
+		"text": "Segundo Todo",
+		"checked": false
+	}, {
+		"id": 3,
+		"text": "Tercer Todo",
+		"checked": false
+	}]
+}
