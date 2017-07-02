@@ -1,6 +1,7 @@
 export const ADD_TODO = "ADD_TODO";
 export const UPDATE_TODO_CREATOR = "UPDATE_TODO_CREATOR";
 export const TOGGLE_TODO = "TOGGLE_TODO";
+export const RESET_TODOS = "RESET_TODOS";
 
 let nextTodoId = 0
 export const fireAddTodo = (text) => ({
@@ -23,4 +24,8 @@ export const fireToggleTodo = (id) => ({
 	payload: {
 		id,
 	}
+})
+
+export const fireResetTodos = (id) => ({
+	type: RESET_TODOS,
 })

@@ -1,0 +1,51 @@
+//Button
+$button-min-width: 68px !default;
+$button-height: 40px !default;
+$button-font-size: 13px !default;
+$button-font-color: #FFFFFF !default;
+$button-background-color: #0074CC !default;
+$button-border-radius: 3px;
+$button-padding: 0 20px;
+$button-margin: 6px 4px 4px;
+
+// Hover
+$button-hover-background-color: #0C5A99;
+
+.todo-reset__container {
+	margin-top: 30px;
+
+	.todo-reset__button {
+		max-width: inherit;
+		min-width: $button-min-width;
+		height: $button-height;
+		font-size: $button-font-size;
+		vertical-align: top;
+		appearance: none;
+		border: none;
+		padding: $button-padding;
+		background: none;
+		color: $button-font-color;
+		background-color: $button-background-color;
+		margin: $button-margin;
+		float: left;
+
+		border-radius: $button-border-radius;
+
+		cursor: pointer;
+
+		&:hover {
+			background-color: $button-hover-background-color;
+		}
+
+		&:active,
+		&:focus {
+			outline: none;
+		}
+	}
+
+	&::after {
+		content: " ";
+		clear: both;
+		display: table;
+	}
+}
