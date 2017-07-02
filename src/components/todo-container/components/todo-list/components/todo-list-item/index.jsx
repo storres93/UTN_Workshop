@@ -7,8 +7,8 @@ import PropTypes from 'prop-types';
 import './main.scss';
 export default class TodoListItem extends Component {
 	static propTypes = {
-		todo: PropTypes.string,
-		checked: PropTypes.boolean,
+		todo: PropTypes.object,
+		checked: PropTypes.bool,
 	};
 
 	static defaultProps = {
@@ -33,7 +33,7 @@ export default class TodoListItem extends Component {
 
 	render() {
 		return <div className="todo-item__container">
-			<input type='checkbox' onChange={ this.toggleCheck }/><span className={`todo-item__label ${this.state.checked ? 'todo-item__label--checked' : ''}`}> { this.props.todo } </span>
+			<input type='checkbox' checked={`${this.props.todo.checked ? 'checked' : ''}`} onChange={ this.toggleCheck }/><span className={`todo-item__label ${this.props.todo.checked ? 'todo-item__label--checked' : ''}`}> { this.props.todo.text } </span>
 		</div>;
 	}
 }

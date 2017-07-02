@@ -2,47 +2,42 @@ import React, {
 	Component
 } from 'react';
 
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
 import TodoList from './components/todo-list';
 import TodoCreator from './components/todo-creator';
 
 import PropTypes from 'prop-types';
 
 import './main.scss';
-export default class TodoContainer extends Component {
+
+import { fireAddTodo } from '../../actions';
+
+export class TodoContainer extends Component {
 	static propTypes = {
 		todos: PropTypes.array,
+		fireAddTodo: PropTypes.func,
 	};
 
 	static defaultProps = {
 		todos: []
-	}
+	};
 
 	constructor(props) {
 		super(props);
 
 		this.createTodo = this.createTodo.bind(this);
-		this.state = {
-			...this.props
-		};
 	}
 
 	createTodo(newTodo) {
-		if (newTodo === null || newTodo === '') {
-			return true;
-		}
-		const newTodos = this.state.todos;
-		newTodos.push(newTodo);
-
-		this.setState({
-			todos: newTodos,
-		});
-		this.forceUpdate();
+		this.props.fireAddTodo(newTodo);
 	}
 
 	render() {
 		return <div className="todo-container">
 			<div>
-				<TodoList todos={ this.state.todos } />
+				<TodoList todos={ this.props.todos } />
 			</div>
 			<div>
 				<TodoCreator createTodo={ this.createTodo } />
@@ -50,3 +45,20 @@ export default class TodoContainer extends Component {
 		</div>;
 	}
 }
+
+function mapStateToProps(state) {
+	return {
+		todos: state.todos
+	};
+}
+
+function mapDispatchToProps(dispatch) {
+	return {
+		fireAddTodo: bindActionCreators(fireAddTodo, dispatch),
+	};
+}
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps,
+)(TodoContainer);

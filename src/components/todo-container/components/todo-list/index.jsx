@@ -16,14 +16,8 @@ export default class TodoList extends Component {
 		todos: []
 	}
 
-	constructor(props) {
-		super(props);
-
-		this.todos = this.props.todos;
-	}
-
 	render() {
-		var todoItems = this.todos.map((todo, key) => (
+		var todoItems = this.props.todos.map((todo, key) => (
 			<TodoListItem key={ key } todo={ todo } />
 		));
 
