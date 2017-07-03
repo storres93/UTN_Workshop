@@ -1,5 +1,5 @@
-#Sexto ejercicio
-##Todo Creator
+# Sexto ejercicio
+## Todo Creator
 Ya teniendo nuestro ambiente de desarrollo bien definido es momento de empezar nuestra aplicacion.
 
 Para esto como ya vimos vamos a usar jsx. Entonces el primer paso seria pasar nuestros componentes ya realizados al formato en jsx.
