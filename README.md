@@ -1,5 +1,5 @@
-#Cuarto ejercicio
-##Configuracion de webpack
+# Cuarto ejercicio
+## Configuracion de webpack
 Ya deberiamos tener webpack instalado y corriendo bundleando nuestro codigo.
 
 Nuestro proximo paso va a ser agregar un archivo de configuracion a webpack asi no tenemos que mandarle todo por consola.
@@ -36,7 +36,7 @@ module.exports = {
 
 De esta manera en nuestro script de build solo deberemos informarle que ejecute `webpack` ya que este buscara el archivo de configuracion `webpack.config.js` o `webpack.config.json` desde la raiz de nuestro proyecto.
 
-##Babel
+## Babel
 Para poder hacer uso completo del lenguaje javascript a veces tenemos que adelantarnos a lo que esta en el momento. Es por esto que para hacer uso de es6(EcmaScript 2015) debemos usar una libreria que transforme nuestro codigo en es6 a es5 para poder ser interpretado por un navegador. Para lograr esto usaremos un famoso transpilador llamado 'babel'.
 
 Como babel lo utilizaremos unicamente para nuestro desarrollo de la aplicacion, debe ir en "devDependencies". Por ende lo instalamos de la siguiente manera.
