@@ -1,4 +1,4 @@
-#Tercer ejercicio
+# Tercer ejercicio
 La idea del tercer ejercicio es que en vez de incluir nuestras librerias por cdn's utilizar la herramienta que nos provee npm de ser un manejador de paquetes. Por esto vamos a agregar a react y react-dom como dependencias de nuestro proyecto.
 
 Para especificar una dependencia de un proyecto se ponen en el package.json en la seccion de "Dependencies" si son dependencias requeridas para poder correr nuestro proyecto o en "devDependencies" toda dependencia que sea necesaria unicamente para desarrollar nuestro proyecto (Como babel).
