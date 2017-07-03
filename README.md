@@ -1,4 +1,4 @@
-#Segundo ejercicio
+# Segundo ejercicio
 La idea del segundo ejercicio es que en vez de poner todo nuestro codigo en un index.html tengamos nuestro codigo por separado y que "algo" se encargue de bundlearlo o transpilarlo para que lo consumamos.
 Para esto vamos a utilizar webpack que lo pueden instalar de la siguiente manera:
 
