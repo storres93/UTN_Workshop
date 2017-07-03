@@ -7,10 +7,10 @@ Hay una branch por ejercicio por si no llegana completarlos ya pueden empezar co
 
 Recomendamos fuertemente de que lleguen a terminar todos los ejercicios ya que son incremenetales
 
-#Objetivo
+# Objetivo
 Nuestro objetivo principal es poder realizar una lista de todos donde un usuario pueda agregar, reordenar y borrar todos. Luego veremos como teniendo un servidor con una API REST podemos fetchear estos todos y crearlos directamente en el servidor.
 
-#Primer ejercicio
+# Primer ejercicio
 La idea del primer ejercicio es que podemos hacer el setup basico de nuestro proyecto. Para esto correremos:
 
 ```
